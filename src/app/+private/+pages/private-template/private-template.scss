@@ -1,0 +1,27 @@
+.sidebar {
+    background-color: rgb(84, 121, 175);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0.2em;
+    cursor: pointer;
+
+    a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 0.3em;
+        border-radius: 0.3em;
+    }
+
+    a:hover {
+        background-color: rgb(190, 204, 226);
+        color: rgb(31, 31, 53);
+    }
+    .content{
+        margin-right: 200px;
+    }
+}
