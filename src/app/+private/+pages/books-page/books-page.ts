@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './books-page.scss',
 })
 export class BooksPage {
-  data:BooksItem[]=[
-  {id:1,title:'برنامه نویسی',writer:'خودم',publisher:'خودم',price:80000},
+  data: BooksItem[] = [
+    { id: 1, title: 'برنامه نویسی', writer: 'خودم', publisher: 'خودم', price: 80000 },
   ]
 }
 export interface BooksItem {
-id:number;
-title:string;
-writer:string;
-publisher:string;
-price:number;
+  id: number;
+  title: string;
+  writer: string;
+  publisher: string;
+  price: number;
 }

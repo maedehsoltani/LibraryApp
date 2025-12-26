@@ -38,6 +38,11 @@
         border-radius: 0.3em;
     }
 
+    button:hover {
+        background-color: rgb(27, 39, 66);
+        border: 2px solid rgb(84, 122, 170);
+    }
+
     input:focus {
         outline-color: rgb(54, 74, 124);
     }

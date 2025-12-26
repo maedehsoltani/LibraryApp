@@ -9,19 +9,25 @@ import { Router } from '@angular/router';
   styleUrl: './login-page.scss',
 })
 export class LoginPage {
+
   router = inject(Router);
+
   loinForm: LoginForm = {
     username: '',
     password: '',
     keepMe: false
   };
+
   message: string = '';
+
   check() {
     if (this.loinForm.username == 'admin' && this.loinForm.password == 'admin') {
       sessionStorage.setItem('token', 'dhjbdcjkncbj');
+
       if (this.loinForm.keepMe == true) {
         localStorage.setItem('token', 'dhjbdcjkncbj');
       }
+      
       this.router.navigateByUrl('/private');
     }
     else {
@@ -29,6 +35,7 @@ export class LoginPage {
     }
   }
 }
+
 export interface LoginForm {
   username: string;
   password: string;

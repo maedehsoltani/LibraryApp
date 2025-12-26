@@ -6,11 +6,12 @@ import { DoshboardPage } from './+private/+pages/doshboard-page/doshboard-page';
 import { MembersPage } from './+private/+pages/members-page/members-page';
 import { BorrowsPage } from './+private/+pages/borrows-page/borrows-page';
 import { ReportsPage } from './+private/+pages/reports-page/reports-page';
+import { privateGuard } from './+shared/private-guard';
 
 export const routes: Routes = [
     { path: 'login', component: LoginPage },
     {
-        path: 'private', component: PrivateTemplate, children: [
+        path: 'private', canActivate: [privateGuard], component: PrivateTemplate, children: [
             { path: 'doshboard', component: DoshboardPage },
             { path: 'books', component: BooksPage },
             { path: 'members', component: MembersPage },
