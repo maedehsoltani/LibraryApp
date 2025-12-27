@@ -1,0 +1,80 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(31, 31, 53);
+
+    tr {
+        border-bottom: 2px solid rgb(71, 112, 145);
+    }
+
+    tr:nth-of-type(2n) {
+        background-color: rgb(156, 173, 197);
+    }
+
+    td,
+    th {
+        text-align: right;
+        padding: 0.3em;
+    }
+
+    th {
+        background-color: rgb(71, 112, 145);
+        color: rgb(234, 237, 243);
+        padding: 0.7em;
+    }
+
+
+    td:last-of-type {
+        text-align: left;
+    }
+}
+
+button {
+    padding: 0.2em 0.4em;
+    border: none;
+    border-radius: 0.3em;
+    margin: 0.4em;
+    width: 40%;
+}
+
+.update {
+    background-color: rgb(211, 182, 51);
+    border: 2px solid rgb(107, 92, 25);
+    box-shadow: 0 0 0.5em rgb(99, 126, 163);
+    color: white;
+}
+
+.remove {
+    background-color: rgb(194, 41, 41);
+    border: 2px solid rgb(90, 20, 20);
+    box-shadow: 0 0 0.5em rgb(99, 126, 163);
+    color: white;
+}
+
+.add {
+    background-color: rgb(41, 194, 74);
+    border: 2px solid rgb(20, 90, 35);
+    box-shadow: 0 0 0.5em rgb(99, 126, 163);
+    width: 100px;
+    color: white;
+}
+
+button {
+    width: 70px;
+}
+
+.submit {
+    background-color: rgb(41, 194, 74);
+    border: 2px solid rgb(20, 90, 35);
+    box-shadow: 0 0 0.5em rgb(99, 126, 163);
+    width: 70px;
+    color: white;
+}
+
+.cancel {
+    background-color: rgb(194, 41, 41);
+    border: 2px solid rgb(90, 20, 20);
+    box-shadow: 0 0 0.5em rgb(99, 126, 163);
+    color: white;
+    width: 70px;
+}
