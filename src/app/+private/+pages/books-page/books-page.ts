@@ -20,8 +20,8 @@ export class BooksPage implements OnInit {
     else if (this.action == 'edit') {
       this.booksService.update(this.item);
     }
-    else if(this.action=='remove'){
-this.booksService.remove(this.item);
+    else if (this.action == 'remove') {
+      this.booksService.remove(this.item);
     }
     this.refreshData();
     this.action = 'list';
