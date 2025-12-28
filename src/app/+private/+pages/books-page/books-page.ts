@@ -9,8 +9,20 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './books-page.scss',
 })
 export class BooksPage implements OnInit {
+  remove(book: BooksItem) {
+    this.item = { ...book };
+    this.action = 'remove';
+  }
   save() {
-    this.booksService.add(this.item);
+    if (this.action == 'add') {
+      this.booksService.add(this.item);
+    }
+    else if (this.action == 'edit') {
+      this.booksService.update(this.item);
+    }
+    else if(this.action=='remove'){
+this.booksService.remove(this.item);
+    }
     this.refreshData();
     this.action = 'list';
   }
@@ -21,8 +33,20 @@ export class BooksPage implements OnInit {
     this.refreshData();
   }
   add() {
+    this.item = {
+      id: 0,
+      title: '',
+      writer: '',
+      publisher: '',
+      price: 0
+    };
     this.action = 'add';
   }
+  edit(books: BooksItem) {
+    this.item = { ...books };
+    this.action = 'edit';
+  }
+
   booksService = inject(BooksService);
   data: BooksItem[] = [];
   action: string = 'list';

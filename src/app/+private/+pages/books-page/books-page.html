@@ -22,8 +22,8 @@
             <td>{{book.publisher}}</td>
             <td>{{book.price}}</td>
             <td>
-                <button class="update">ویرایش</button>
-                <button class="remove">حذف</button>
+                <button (click)="edit(book)" class="update">ویرایش</button>
+                <button (click)="remove(book)" class="remove">حذف</button>
             </td>
         </tr>
         }
@@ -33,19 +33,19 @@
 @else {
 <form (ngSubmit)="save()">
     <div>
-        <input [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
+        <input [disabled]="action=='edit' || action=='remove'" [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
     </div>
     <div>
-        <input [(ngModel)]="item.title" id="title" name="title" type="text" placeholder="عنوان">
+        <input [disabled]="action=='remove'" [(ngModel)]="item.title" id="title" name="title" type="text" placeholder="عنوان">
     </div>
     <div>
-        <input [(ngModel)]="item.writer" id="writer" name="writer" type="text" placeholder="نویسنده">
+        <input [disabled]="action=='remove'" [(ngModel)]="item.writer" id="writer" name="writer" type="text" placeholder="نویسنده">
     </div>
     <div>
-        <input [(ngModel)]="item.publisher" id="publisher" name="publisher" type="text" placeholder="ناشر">
+        <input [disabled]="action=='remove'" [(ngModel)]="item.publisher" id="publisher" name="publisher" type="text" placeholder="ناشر">
     </div>
     <div>
-        <input [(ngModel)]="item.price" id="price" name="price" type="number" placeholder="قیمت">
+        <input [disabled]="action=='remove'" [(ngModel)]="item.price" id="price" name="price" type="number" placeholder="قیمت">
     </div>
 
     <div>
