@@ -1,3 +1,3 @@
 export interface Thing {
-    id: number;
+    id?: number;
 }

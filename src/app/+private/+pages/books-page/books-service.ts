@@ -11,4 +11,11 @@ export class BooksService extends BaseCRUDService<BooksItem> {
     { id: 2, title: 'برنامه نویسی پیشرفته', writer: 'خودم', publisher: 'خودم', price: 180000 },
     { id: 3, title: 'برنامه نویسی وب', writer: 'خودم', publisher: 'خودم', price: 280000 },
   ];
+
+  override edit(destination: BooksItem, source: BooksItem): void {
+    destination.title=source.title;
+    destination.writer=source.writer;
+    destination.publisher=source.publisher;
+    destination.price=source.price;
+  }
 }

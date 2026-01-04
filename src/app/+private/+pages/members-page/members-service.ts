@@ -10,4 +10,11 @@ export class MembersService extends BaseCRUDService<MemberItem> {
     { id: 1, name: 'زهرا', family: 'رضایی', kodmeli: '4052111236', phone: '09165412360' },
     { id: 2, name: 'علی', family: 'حیدری', kodmeli: '4052641254', phone: '09145361110' },
   ];
+
+  override edit(destination: MemberItem, source: MemberItem): void {
+    destination.name=source.name;
+    destination.family=source.family;
+    destination.kodmeli=source.kodmeli;
+    destination.phone=source.phone;
+  }
 }
