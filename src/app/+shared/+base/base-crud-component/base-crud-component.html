@@ -1,0 +1,47 @@
+@if (myaction=='list') {
+<div>
+    <button (click)="onAdd.emit()" class="add">افزودن</button>
+    
+</div>
+<table>
+    <thead>
+        <tr>
+            @for (col of columns; track $index) {
+                <th>{{col.title}}</th>
+            }
+            <th></th>
+        </tr>
+        <!-- <tr>
+            <th><input type="text" placeholder="شناسه"></th>
+            <th><input type="text" placeholder="نام"></th>
+            <th><input type="text" placeholder="نام خانوادگی"></th>
+            <th><input type="text" placeholder="کد ملی"></th>
+            <th><input type="text" placeholder="موبایل"></th>
+            <th></th>
+        </tr> -->
+    </thead>
+
+    <tbody>
+        @for (i of data; track $index) {
+        <tr>
+            @for (col of columns; track $index) {
+            <td>{{i[col.field]}}</td>
+            }
+            <td>
+                <button (click)="onEdit.emit(i)" class="update">ویرایش</button>
+                <button (click)="onRemove.emit(i)" class="remove">حذف</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
+@else {
+<form (ngSubmit)="onSave.emit()">
+    <ng-content></ng-content>
+    <div>
+        <button class="submit" type="submit">تایید</button>
+        <button (click)="onCancel.emit()" class="cancel" type="button">انصراف</button>
+    </div>
+</form>
+}

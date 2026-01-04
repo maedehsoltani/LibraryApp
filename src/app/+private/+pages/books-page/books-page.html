@@ -1,39 +1,15 @@
-@if (action=='list') {
-<div>
-    <button (click)="add()" class="add">افزودن</button>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>شناسه</th>
-            <th>عنوان</th>
-            <th>نویسنده</th>
-            <th>ناشر</th>
-            <th>قیمت</th>
-            <th></th>
-        </tr>
-    </thead>
+<my-crud 
 
-    <tbody>
-        @for (book of data; track $index) {
-        <tr>
-            <td>{{book.id}}</td>
-            <td>{{book.title}}</td>
-            <td>{{book.writer}}</td>
-            <td>{{book.publisher}}</td>
-            <td>{{book.price}}</td>
-            <td>
-                <button (click)="edit(book)" class="update">ویرایش</button>
-                <button (click)="remove(book)" class="remove">حذف</button>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
-}
-@else {
-<form (ngSubmit)="save()">
-    <div>
+[myaction]="action"
+(onAdd)="add()"
+(onCancel)="cancel()"
+[columns]="columns"
+[data]="data"
+(onEdit)="edit($event)"
+(onRemove)="remove($event)"
+(onSave)="save()"
+>
+<div>
         <input [disabled]="action=='edit' || action=='remove'" [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
     </div>
     <div>
@@ -48,10 +24,4 @@
     <div>
         <input [disabled]="action=='remove'" [(ngModel)]="item.price" id="price" name="price" type="number" placeholder="قیمت">
     </div>
-
-    <div>
-        <button class="submit" type="submit">تایید</button>
-        <button (click)="cancel()" class="cancel" type="button">انصراف</button>
-    </div>
-</form>
-}
+</my-crud>
